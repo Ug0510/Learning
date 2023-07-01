@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{%block title%}Third Page{% endblock%}
+{%block content%}
+<h1>Welcome to Third page here!</h1>
+<ol>
+    {% for one in myfruits%}
+        <li>{{one}}</li>
+    {%endfor%}
+</ol>
+{% endblock%}

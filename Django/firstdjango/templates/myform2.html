@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{%block title%}Second Form{% endblock%}
+{%block content%}
+<div class='col-md-6 mx-auto d-block'>
+    {%if success == True%}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Form Submitted!</strong> Enjoy Party Hard and chill 
+        <br>
+        {{successmsg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endif %}
+    {% if error == True %}
+    {% for errors in errormsg %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{errors}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    {% endif %}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type='submit' class='btn btn-primary py-2 px-4 mx-auto d-block' >Submit</button>
+</form>
+</div>
+{% endblock%}

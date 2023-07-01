@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load static%}
+{%block title%}Third Page{% endblock%}
+{%block content%}
+<h1>Welcome to Image page here!</h1>
+    {% if var == '0' %}
+    <img src="{% static 'digital.jpeg'%}" class="img-fluid" width="300px"/>
+    {% elif var == '1' %}
+    <img src="{% static 'wwallpaper.jpeg'%}" class="img-fluid" width="300px"/>
+    {% elif var == '2' %}
+    <img src="{% static 'wwallpaper1.jpeg'%}" class="img-fluid" width="300px"/>
+    {% endif %}
+{% endblock%}

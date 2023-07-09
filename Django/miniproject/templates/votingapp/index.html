@@ -19,6 +19,9 @@
   </head>
   <body>
 
+
+    {{arr}}
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" style='font-family:cursive;'>Django Voting App</a>
@@ -83,12 +86,12 @@
 
 
 
-    
+
     <div class="container mt-5">
       {% comment %} About Section  {% endcomment %}
       <div class="row" id='about'>
           <div class="col-md-6 mx-auto text-center">
-              <p class="display-4 ">About</p>
+              <p class=" badge bg-success d-block fs-3 py-3">About</p>
               <hr>
               <p class="lead">Simple Calculator made using Python and Django </p>
               <p class="lead">Our Calculator can Perform mathematical operation.</p>
@@ -98,7 +101,7 @@
       {% comment %} Instructions Section  {% endcomment %}
       <div class="row py-5" id='instructions'>
         <div class="col-md-6 mx-auto text-center">
-            <p class="display-4">Instructions</p>
+            <p class="badge bg-danger d-block fs-3 py-3">Instructions</p>
             <hr>
             <ul class="list-group">
                 <li class="list-group-item py-3">+ for Addition</li>

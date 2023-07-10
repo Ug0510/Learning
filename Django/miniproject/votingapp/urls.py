@@ -4,5 +4,6 @@ from . import views
 #All urls
 
 urlpatterns = [
-    path('',views.index,name='index ')
+    path('',views.index,name='index '),
+    path('getquery',views.getquery,name='getquery')
 ]

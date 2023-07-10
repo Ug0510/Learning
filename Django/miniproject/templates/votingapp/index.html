@@ -20,8 +20,6 @@
   <body>
 
 
-    {{arr}}
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" style='font-family:cursive;'>Django Voting App</a>
@@ -69,11 +67,16 @@
           <img class='img-fluid mx-auto d-block' src='{% static "code.jpg" %}' >
           <div class='card '>
             <div class='card-body'>
-              <form method="GET" action=" {% url 'submitquery'%}">
+              <form method="GET" action=" {% url 'getquery'%}">
+                <input list='languages' class="form-control mb-3" name="languages">
+                <datalist id="languages">
+                  {% for lang in arr%}
+                  <option value="{{lang}}">
+                    {% endfor %}
+                  </datalist>
                 <div class='form-group text-center '>
-                  <input type='search' class='form-control' name='query' id='query'>
                   <div class='d-flex justify-content-around mt-3'>
-                    <input type='submit' class='btn btn-success '>
+                    <input type='submit' class='btn btn-success ' >
                     <input type='reset' class='btn btn-danger'>
                   </div>
                 </div>

@@ -90,13 +90,48 @@
 
 
     <div class="container mt-5">
+      {% comment %} Result Section {% endcomment %}
+      <div class="row py-5" id='results'>
+        <div class="col-md-6 mx-auto text-center">
+            <p class="badge bg-warning d-block fs-3 py-3">Result</p>
+            <hr>
+            <p class="lead display-6">Result Table</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Last</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr><tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       {% comment %} About Section  {% endcomment %}
       <div class="row" id='about'>
           <div class="col-md-6 mx-auto text-center">
               <p class=" badge bg-success d-block fs-3 py-3">About</p>
               <hr>
-              <p class="lead">Simple Voting app made using Python and Django </p>
-              <p class="lead">Choose your Favorite Programming Language</p>
+              <p class="lead display-6">Choose your Favorite Programming Language and Vote</p>
           </div>
       </div>
 
@@ -105,6 +140,7 @@
         <div class="col-md-6 mx-auto text-center">
             <p class="badge bg-danger d-block fs-3 py-3">Instructions</p>
             <hr>
+            <p class="lead display-6">Select your language and see results</p>
         </div>
       </div>
 

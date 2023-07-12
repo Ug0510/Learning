@@ -23,6 +23,6 @@ def getquery(request):
         globalcnt[q] = 1
     mydictionay = {
         'arr':arr,
-        "gbcnt":globalcnt
+        "globalcnt":globalcnt
     }
     return render(request,'index.html',context=mydictionay)

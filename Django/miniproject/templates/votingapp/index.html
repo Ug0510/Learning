@@ -13,7 +13,7 @@
 
   <style>
     body{
-      background-color:rgba(0,0,0,0.06);
+      {% comment %} background-color:rgba(0,0,0,0.06); {% endcomment %}
     }
     </style>
   </head>
@@ -29,13 +29,13 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item"> 
+              <a class="nav-link " aria-current="page" href="#results">Results</a>
+            </li>
+            <li class="nav-item"> 
               <a class="nav-link " aria-current="page" href="#about">About</a>
             </li>
             <li class="nav-item"> 
               <a class="nav-link " aria-current="page" href="#instructions">Instructions</a>
-            </li>
-            <li class="nav-item"> 
-              <a class="nav-link " aria-current="page" href="#results">Results</a>
             </li>
           </ul>
         </div> 
@@ -89,38 +89,38 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container my-5">
       {% comment %} Result Section {% endcomment %}
-      <div class="row py-5" id='results'>
+      <div class="row" id='results'>
         <div class="col-md-6 mx-auto text-center">
             <p class="badge bg-warning d-block fs-3 py-3">Result</p>
             <hr>
-            <p class="lead display-6">Result Table</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 table-responsive">
+        <div class="col-md-12 mx-auto d-block table-responsive">
+
+          <p class="lead display-6 text-center">Result Table</p>
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Last</th>
+                <th scope="col">Language</th>
+                <th scope="col">Count</th>
               </tr>
             </thead>
             <tbody>
+              {% for key,value in globalcnt.items %}
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr><tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th >{{forloop.counter}}</th>
+                <td>{{key}}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{value}}%" aria-valuenow="{{value}}" aria-valuemin="0" aria-valuemax="100">{{value}}</div>
+                  </div>
+                </td>
               </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

@@ -45,22 +45,6 @@
 
 
     <div class='container bg-cyan'>
-      <div class="row">
-        <div class="col-md-6 d-block mx-auto">
-          {% if error%}
-          <div class="alert alert-danger alert-dismissible fade show " role="alert">
-            <strong>Sorry! , There is an Error</strong> 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          {% endif %}
-          {% if result %}
-          <div class="alert alert-success alert-dismissible fade show " role="alert">
-            <strong>Result = {{ans}}</strong> 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          {% endif %}
-        </div>
-      </div>
       <div class='row'>
         <div class="col-md-6 mx-auto mt-4 border p-5 shadow">
           <img class='img-fluid mx-auto d-block' src='{% static "code.jpg" %}' >

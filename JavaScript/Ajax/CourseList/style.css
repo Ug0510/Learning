@@ -19,4 +19,6 @@ header{
 #courselist{
     display: flex;
     gap:3;
+    width:100%;
+    flex-wrap: wrap;
 }

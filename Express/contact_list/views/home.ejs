@@ -4,5 +4,12 @@
     </head>
     <body>
         <h1>Rendered From Ejs View!</h1>
+
+        <!-- form to add contact  -->
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="number" name="number" placeholder="Enter Phone Number" required>
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </html>

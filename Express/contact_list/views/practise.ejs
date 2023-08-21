@@ -9,9 +9,10 @@
         <a href="./">HOME</a>
 
         <ul>
-            <% for(let i = 0; i < 10; i++) { %>
+            <% for(let contact of contact_list) { %>
                 <li>
-                    <%= i %>
+                    <p>Name: <%= contact.name %></p>
+                    <p>Number: <%= contact.number %> </p>
                 </li>
             <% } %>
         </ul>

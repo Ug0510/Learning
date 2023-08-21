@@ -5,12 +5,11 @@ const port = 8080;
 const app = express();
 
 app.set('view engine','ejs');
-// app.set('views')
+// app.set('views', path.join(__dirname,'views'));
 
 
 app.get('/',function(req,res){
-    console.log(__dirname);
-    res.send('Hi, Dear');
+    return res.render('home');
 });
 
 app.listen(port,function(err){

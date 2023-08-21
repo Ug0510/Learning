@@ -12,6 +12,10 @@ app.get('/',function(req,res){
     return res.render('home',{title:'My Contact List'});
 });
 
+app.get('/practise',function(req,res){
+    return res.render('practise',{title:'Playground'});
+});
+
 app.listen(port,function(err){
     if(err)
     {

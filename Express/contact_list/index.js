@@ -22,6 +22,22 @@ app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
 app.use(express.urlencoded());
 
+//making our own middleware1
+app.use(function(req,res,next){
+    req.myName = 'Udit';
+    console.log('middleware1 is working');
+    //next() tells the middleware or controller to move forward to next middleware or page
+    next();
+});
+
+//making our own middleware2
+app.use(function(req,res,next){
+    console.log('middleware2 is working');
+    console.log('my Name from middleware1 is',req.myName);
+    //next() tells the middleware or controller to move forward to next middleware or page
+    next();
+});
+
 app.get('/',function(req,res){
     return res.render('home',{title:'My Contact List'});
 });
@@ -34,7 +50,6 @@ app.get('/practise',function(req,res){
 });
 
 app.post('/create-contact',function(req,res){
-    console.log(req.body);
     let newEntry = {
         name: req.body.name,
         number: req.body.number

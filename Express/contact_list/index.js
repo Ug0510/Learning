@@ -21,6 +21,7 @@ const contactList = [
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
 app.use(express.urlencoded());
+app.use(express.static('assests'));
 
 //making our own middleware1
 app.use(function(req,res,next){

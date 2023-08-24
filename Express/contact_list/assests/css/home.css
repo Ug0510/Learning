@@ -46,6 +46,7 @@ body{
     margin-top:1rem;
     display: flex;
     justify-content: space-between;
+    transition: all 0.5s ease;
 }
 #contact-list li:hover{
     background-color: cadetblue;
@@ -73,7 +74,7 @@ body{
 }
 #entryform{
     margin-top:3rem;
-    font-size: 2rem;
+   
 }
 #entryform input:not(input[type='submit']){
     padding:5px 10px;
@@ -82,9 +83,15 @@ body{
     border: none;
     border-bottom: 4px solid rgb(108, 99, 99);
     margin-right:20px;
+    font-size: 1.4rem;
 }
 #entryform input[type='submit']{
     padding:10px 20px;
     background-color: lightblue;
     border-radius: 20px;
+    font-size: 1.4rem;
+}
+#entryform input:focus{
+    outline: none;
+    border: none;
 }

@@ -59,15 +59,10 @@ app.post('/create-contact',function(req,res){
     return res.redirect('/practise'); 
 })
 
-app.get('/delete-contact/:phone', function(req, res) {
-    console.log(req.params);
-    let phone = req.params.phone;
-    for (let contact of contactList) {
-        if (contact.phone === phone) {
-            contactList.splice(contactList.indexOf(contact), 1);
-            break; // Once the contact is found and removed, exit the loop
-        }
-    }
+app.get('/delete-contact/', function(req, res) {
+    console.log(req.query);
+    let phone = req.query.phone;
+
     return res.redirect('/practise');
 });
 

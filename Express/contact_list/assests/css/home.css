@@ -71,3 +71,20 @@ body{
     margin-bottom: 6px;
     color:tomato;
 }
+#entryform{
+    margin-top:3rem;
+    font-size: 2rem;
+}
+#entryform input:not(input[type='submit']){
+    padding:5px 10px;
+    padding-left:0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid rgb(108, 99, 99);
+    margin-right:20px;
+}
+#entryform input[type='submit']{
+    padding:10px 20px;
+    background-color: lightblue;
+    border-radius: 20px;
+}

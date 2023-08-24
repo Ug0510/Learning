@@ -1,1 +1,1 @@
-console.log("My Script is loading");
+console.log("Script is working fine");

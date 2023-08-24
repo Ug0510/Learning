@@ -3,18 +3,28 @@
         <title>
             <%= title %>
         </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1>Welcome to playground</h1>
-        <a href="./">HOME</a>
-
-        <ul>
+        <h1 id="page-heading"><i class="fa-solid fa-address-book"></i>Contact List</h1>
+        <a href="./" class="nav-link">HOME</a>
+        <ul id="contact-list">
             <% for(let contact of contact_list) { %>
-                <li>
-                    <p>Name: <%= contact.name %></p>
-                    <p>Number: <%= contact.number %> </p>
+             <li>
+                    <p></span><%= contact.name %></p>
+                    <p><%= contact.number %> <a href="/delete-contact/<%= contact.number %>"><i class="fa-solid fa-trash"></i></a></p>
                 </li>
             <% } %>
         </ul>
+
+        <!-- form to add contact  -->
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="number" name="number" placeholder="Enter Phone Number" required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script src="/js/home.js"></script>
     </body>
 </html>

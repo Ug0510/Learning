@@ -60,9 +60,7 @@ app.post('/create-contact',function(req,res){
 })
 
 app.get('/delete-contact/', function(req, res) {
-    console.log(req.query);
     let phone = req.query.phone;
-    console.log(phone);
     
     let contactIndex = contactList.findIndex(contact => contact.number == phone);
 

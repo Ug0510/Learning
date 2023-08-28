@@ -71,8 +71,8 @@ app.post('/create-contact', async function(req, res) {
         };
 
         // Adding data to the database using the Contact model
-        let newContact = await Contact.create(newEntry);
-        console.log('**********', newContact);
+        await Contact.create(newEntry);
+        
         return res.redirect('/practise');  // Redirect to the practice page after adding data
     } catch (err) {
         console.log("Error while adding data to Contact List");
@@ -81,16 +81,19 @@ app.post('/create-contact', async function(req, res) {
 });
 
 
-app.get('/delete-contact/', function(req, res) {
-    let phone = req.query.phone;
-    
-    let contactIndex = contactList.findIndex(contact => contact.number == phone);
+app.get('/delete-contact/',async function(req, res) {
 
-    if(contactIndex != -1)
-    {
-        contactList.splice(contactIndex, 1);
+    try{
+        //get id from the query in the url
+        let id = req.query.id;
+
+        // find the contact in the database using id and delete it
+         await Contact.findByIdAndDelete(id);
+        return res.redirect('back');
+    
+    }catch (err){
+        console('Error deleting the contact');
     }
-    return res.redirect('back');
 });
 
 

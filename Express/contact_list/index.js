@@ -6,20 +6,21 @@ const db = require('./config/mongoose');
 const Contact = require('./models/contact');
 
 const app = express();
-const contactList = [
-    {
-        name:'Udit Gupta',
-        number:'1234567890'
-    },
-    {
-        name:'Raj Malhotra',
-        number:'9873213984'
-    },
-    {
-        name:'Vikas Dubey',
-        number:'8265923628'
-    }
-];
+// const contactList = [
+//     {
+//         name:'Udit Gupta',
+//         number:'1234567890'
+//     },
+//     {
+//         name:'Raj Malhotra',
+//         number:'9873213984'
+//     },
+//     {
+//         name:'Vikas Dubey',
+//         number:'8265923628'
+//     }
+// ];
+let contact_list = [];
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
@@ -46,11 +47,19 @@ app.get('/',function(req,res){
     return res.render('home',{title:'My Contact List'});
 });
 
-app.get('/practise',function(req,res){
-    return res.render('practise',{
-        title:'Playground',
-        contact_list:contactList
-    });
+app.get('/practise',async function(req,res){
+
+    try {
+        const contacts = await Contact.find({});
+        res.render('practise', {
+            title: 'Playground',
+            contact_list: contacts
+        });
+    } catch (error) {
+        console.log('Error:', error);
+    }
+
+    
 });
 
 

@@ -13,7 +13,7 @@
             <% for(let contact of contact_list) { %>
              <li>
                     <p></span><%= contact.name %></p>
-                    <p><%= contact.number %> <a href="/delete-contact/?phone=<%= contact.number %>"><i class="fa-solid fa-trash"></i></a></p>
+                    <p><%= contact.number %> <a href="/delete-contact/?id=<%= contact._id %>"><i class="fa-solid fa-trash"></i></a></p>
                 </li>
             <% } %>
         </ul>

@@ -3,6 +3,7 @@ const path = require('path');
 const port = 8080;
 
 const db = require('./config/mongoose');
+const Contact = require('./models/contact');
 
 const app = express();
 const contactList = [
@@ -52,14 +53,24 @@ app.get('/practise',function(req,res){
     });
 });
 
-app.post('/create-contact',function(req,res){
-    let newEntry = {
-        name: req.body.name,
-        number: req.body.number
+
+app.post('/create-contact', async function(req, res) {
+    try {
+        let newEntry = {
+            name: req.body.name,
+            number: req.body.number
+        };
+
+        // Adding data to the database using the Contact model
+        let newContact = await Contact.create(newEntry);
+        console.log('**********', newContact);
+        return res.redirect('/practise');  // Redirect to the practice page after adding data
+    } catch (err) {
+        console.log("Error while adding data to Contact List");
+        return res.redirect('back');
     }
-    contactList.push(newEntry);
-    return res.redirect('/practise'); 
-})
+});
+
 
 app.get('/delete-contact/', function(req, res) {
     let phone = req.query.phone;
